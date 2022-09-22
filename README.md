@@ -1,6 +1,6 @@
 <div align="center">
     <img src="/apps/web/public/logo.svg" height="128">
-    <h1>Aheui-∅ ✂️ Pro</h1>
+    <h1>Aheui-<ruby>∅ <rp> (</rp><rt>null</rt><rp>)</rp></ruby> <ruby>✂️<rp> (</rp><rt>cut</rt><rp>)</rp></ruby> Pro</h1>
     <p>시간 차원을 더해 엮어낸 3차원 아희 코드로 세상을 그려내보세요.</p>
 </div>
 
