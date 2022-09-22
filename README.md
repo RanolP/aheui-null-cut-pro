@@ -1,6 +1,10 @@
-# <img src="/apps/web/public/logo.svg" height="32"> Aheui-∅ ✂️ Pro (아희널 컷 프로)
+<div align="center">
+    <img src="/apps/web/public/logo.svg" height="128">
+    <h1>Aheui-∅ ✂️ Pro</h1>
+    <p>시간 차원을 더해 엮어낸 3차원 아희 코드로 세상을 그려내보세요.</p>
+</div>
 
-시간 차원을 더해 엮어낸 3차원 아희 코드로 세상을 그려내보세요.
+## 소개
 
 ## 주요 아이디어
 
