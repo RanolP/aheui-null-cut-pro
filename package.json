@@ -1,12 +1,8 @@
 {
   "name": "aheui-null-cut-pro",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+    "dev": "pnpm run --filter web dev",
+    "build": "pnpm run --filter web build"
+  }
 }
