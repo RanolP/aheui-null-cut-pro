@@ -8,12 +8,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@stitches/react": "^1.2.8",
     "aheui-jit": "^1.0.9",
     "preact": "^10.10.6",
     "react": "npm:@preact/compat@^17.1.1",
-    "react-dom": "npm:@preact/compat@^17.1.1",
-    "@react-three/fiber": "^8.8.1",
-    "three": "^0.144.0"
+    "react-dom": "npm:@preact/compat@^17.1.1"
   },
   "devDependencies": {
     "@babel/core": "^7.19.1",
