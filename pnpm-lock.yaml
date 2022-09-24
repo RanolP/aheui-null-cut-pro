@@ -3,7 +3,37 @@ lockfileVersion: 5.4
 importers:
 
   .:
-    specifiers: {}
+    specifiers:
+      '@babel/core': ^7.19.1
+      '@babel/plugin-syntax-jsx': ^7.18.6
+      '@babel/plugin-transform-react-jsx': ^7.19.0
+      '@babel/plugin-transform-react-jsx-development': ^7.18.6
+      '@preact/preset-vite': ^2.3.0
+      '@react-three/fiber': ^8.8.1
+      aheui-jit: ^1.0.9
+      babel-plugin-transform-hook-names: ^1.0.2
+      preact: ^10.10.6
+      react: npm:@preact/compat@^17.1.1
+      react-dom: npm:@preact/compat@^17.1.1
+      three: ^0.144.0
+      typescript: ^4.6.4
+      vite: ^3.1.0
+    dependencies:
+      '@react-three/fiber': 8.8.1_z77duxdot4zovfpnydds7dzi2i
+      aheui-jit: 1.0.9
+      preact: 10.11.0
+      react: /@preact/compat/17.1.1_preact@10.11.0
+      react-dom: /@preact/compat/17.1.1_preact@10.11.0
+      three: 0.144.0
+    devDependencies:
+      '@babel/core': 7.19.1
+      '@babel/plugin-syntax-jsx': 7.18.6_@babel+core@7.19.1
+      '@babel/plugin-transform-react-jsx': 7.19.0_@babel+core@7.19.1
+      '@babel/plugin-transform-react-jsx-development': 7.18.6_@babel+core@7.19.1
+      '@preact/preset-vite': 2.4.0_znorg7qisg2x2cwmeoubwalmrq
+      babel-plugin-transform-hook-names: 1.0.2_@babel+core@7.19.1
+      typescript: 4.8.3
+      vite: 3.1.3
 
   apps/web:
     specifiers:
