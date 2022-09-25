@@ -1,15 +1,28 @@
+import { LedMatrixEdit } from './components/led-matrix-edit.jsx';
 import { LedMatrix } from './components/led-matrix.jsx';
 import { styled } from './stitches.config.js';
 import { applyReset } from './styles/reset.js';
 import { applyTypography } from './styles/typography.js';
+import { Suspense } from 'preact/compat';
 
 const Container = styled('div', {
   display: 'grid',
-  gridTemplateColumns: '1fr 1fr',
+  gridTemplateColumns: '1fr',
   gridTemplateRows: 'auto 1fr',
   gridGap: '4rem',
   height: '100vh',
 });
+
+function transform(src: string): string[] {
+  return src.split(' ').map((x) => ({ '.': 'gray', '#': 'yellow' }[x] ?? x));
+}
+
+function led(src: TemplateStringsArray): string[][] {
+  return src[0]
+    .trim()
+    .split('\n')
+    .map((x) => transform(x.trim()));
+}
 
 export function App(): JSX.Element {
   applyReset();
@@ -18,131 +31,22 @@ export function App(): JSX.Element {
   return (
     <Container>
       <h1>Hello, world!</h1>
-      <h1></h1>
+      <Suspense fallback={<div>Loading...</div>}>
+        <LedMatrixEdit />
+      </Suspense>
       <LedMatrix
-        size={8}
-        matrix={[
-          [
-            'gray',
-            'yellow',
-            'yellow',
-            'yellow',
-            'gray',
-            'gray',
-            'yellow',
-            'gray',
-          ],
-          [
-            'yellow',
-            'gray',
-            'gray',
-            'gray',
-            'yellow',
-            'gray',
-            'yellow',
-            'gray',
-          ],
-          [
-            'yellow',
-            'gray',
-            'gray',
-            'gray',
-            'yellow',
-            'gray',
-            'yellow',
-            'gray',
-          ],
-          [
-            'yellow',
-            'gray',
-            'gray',
-            'gray',
-            'yellow',
-            'gray',
-            'yellow',
-            'yellow',
-          ],
-          [
-            'yellow',
-            'gray',
-            'gray',
-            'gray',
-            'yellow',
-            'gray',
-            'yellow',
-            'gray',
-          ],
-          [
-            'gray',
-            'yellow',
-            'yellow',
-            'yellow',
-            'gray',
-            'gray',
-            'yellow',
-            'gray',
-          ],
-          ['gray', 'gray', 'gray', 'gray', 'gray', 'gray', 'yellow', 'gray'],
-          ['gray', 'gray', 'gray', 'gray', 'gray', 'gray', 'yellow', 'gray'],
-        ]}
-      />
-      <LedMatrix
-        size={8}
-        matrix={[
-          [
-            'gray',
-            'yellow',
-            'yellow',
-            'yellow',
-            'gray',
-            'gray',
-            'yellow',
-            'gray',
-          ],
-          [
-            'yellow',
-            'yellow',
-            'yellow',
-            'yellow',
-            'yellow',
-            'gray',
-            'yellow',
-            'gray',
-          ],
-          [
-            'gray',
-            'yellow',
-            'gray',
-            'yellow',
-            'gray',
-            'gray',
-            'yellow',
-            'gray',
-          ],
-          [
-            'gray',
-            'yellow',
-            'gray',
-            'yellow',
-            'gray',
-            'gray',
-            'yellow',
-            'gray',
-          ],
-          ['gray', 'gray', 'yellow', 'gray', 'gray', 'gray', 'yellow', 'gray'],
-          ['gray', 'gray', 'gray', 'gray', 'gray', 'gray', 'yellow', 'gray'],
-          [
-            'yellow',
-            'yellow',
-            'yellow',
-            'yellow',
-            'yellow',
-            'gray',
-            'yellow',
-            'gray',
-          ],
-          ['gray', 'gray', 'gray', 'gray', 'gray', 'gray', 'yellow', 'gray'],
-        ]}
+        width={16}
+        height={8}
+        matrix={led`
+          . # # # . . # . . # # # . . # .
+          # . . . # . # . # # # # # . # .
+          # . . . # . # . . # . # . . # .
+          # . . . # . # # . # . # . . # .
+          # . . . # . # . . . # . . . # .
+          . # # # . . # . . . . . . . # .
+          . . . . . . # . # # # # # . # .
+          . . . . . . # . . . . . . . # .
+        `}
       />
     </Container>
   );

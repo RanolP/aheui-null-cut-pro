@@ -8,16 +8,18 @@ importers:
       '@babel/plugin-syntax-jsx': ^7.18.6
       '@babel/plugin-transform-react-jsx': ^7.19.0
       '@babel/plugin-transform-react-jsx-development': ^7.18.6
-      '@preact/preset-vite': ^2.3.0
+      '@preact/preset-vite': ^2.4.0
+      '@preact/signals': ^1.1.1
       '@stitches/react': ^1.2.8
       aheui-jit: ^1.0.9
       babel-plugin-transform-hook-names: ^1.0.2
-      preact: ^10.10.6
+      preact: ^10.11.0
       react: npm:@preact/compat@^17.1.1
       react-dom: npm:@preact/compat@^17.1.1
-      typescript: ^4.6.4
-      vite: ^3.1.0
+      typescript: ^4.8.3
+      vite: ^3.1.3
     dependencies:
+      '@preact/signals': 1.1.1_preact@10.11.0
       '@stitches/react': 1.2.8_@preact+compat@17.1.1
       aheui-jit: 1.0.9
       preact: 10.11.0
@@ -431,6 +433,19 @@ packages:
       - preact
       - supports-color
     dev: true
+
+  /@preact/signals-core/1.2.0:
+    resolution: {integrity: sha512-GBjq/8WJkh/aenrEMvWIOr1lRfu6nb25er0m6r+4qVqKC85mXAYIbGHnoHTooNXCKxn2KEMUrATvN54MdMHE1A==}
+    dev: false
+
+  /@preact/signals/1.1.1_preact@10.11.0:
+    resolution: {integrity: sha512-I1DhYo2d1t9qDkEq1jYDVTQdBGmo4NlqatNEtulsS/87kVdwhZluP6TTDS4/5sc2h86TlBF6UA6LO+tDpIt/Gw==}
+    peerDependencies:
+      preact: 10.x
+    dependencies:
+      '@preact/signals-core': 1.2.0
+      preact: 10.11.0
+    dev: false
 
   /@prefresh/babel-plugin/0.4.3:
     resolution: {integrity: sha512-fYAWbU1WDSLn108kKY4eDaaeUcnszFqXjgaGKYXNZ5NLulpRTpsrY+Sbfo9q8LDpWrBpqIgzjrwNnvglWI1xNQ==}

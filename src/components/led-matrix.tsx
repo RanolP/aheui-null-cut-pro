@@ -2,28 +2,34 @@ import { styled } from '../stitches.config.js';
 import { LedBulb } from './led-bulb.js';
 
 export interface LedMatrixProps {
-  size: number;
+  width: number;
+  height: number;
   matrix: string[][];
 }
 
 const Container = styled('div', {
   background: 'black',
   display: 'grid',
-  gridTemplateColumns: 'repeat(var(--size), minmax(0, 1fr))',
-  gridTemplateRows: 'repeat(var(--size), minmax(0, 1fr))',
-  padding: 'var(--gap)',
-  gap: 'var(--gap)',
+  gridTemplateColumns: 'repeat(var(--width), minmax(0, 1fr))',
+  gridTemplateRows: 'repeat(var(--height), minmax(0, 1fr))',
+  padding: '4%',
+  columnGap: 'calc(15% / var(--height))',
+  rowGap: 'calc(15% / var(--width))',
   justifyContent: 'center',
   gridAutoFlow: 'row',
-  aspectRatio: '1 / 1',
-  height: '100%',
-  width: '100%',
+  aspectRatio: 'var(--width) / var(--height)',
+  maxHeight: '100%',
+  maxWidth: '100%',
   overflow: 'hidden',
 });
 
-export function LedMatrix({ size, matrix }: LedMatrixProps): JSX.Element {
+export function LedMatrix({
+  width,
+  height,
+  matrix,
+}: LedMatrixProps): JSX.Element {
   return (
-    <Container style={{ '--size': size, '--gap': `${25 / size}%` }}>
+    <Container style={{ '--width': width, '--height': height }}>
       {matrix.map((row) => row.map((color) => <LedBulb color={color} />))}
     </Container>
   );

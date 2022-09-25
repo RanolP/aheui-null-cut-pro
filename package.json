@@ -8,9 +8,10 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@preact/signals": "^1.1.1",
     "@stitches/react": "^1.2.8",
     "aheui-jit": "^1.0.9",
-    "preact": "^10.10.6",
+    "preact": "^10.11.0",
     "react": "npm:@preact/compat@^17.1.1",
     "react-dom": "npm:@preact/compat@^17.1.1"
   },
@@ -19,9 +20,9 @@
     "@babel/plugin-syntax-jsx": "^7.18.6",
     "@babel/plugin-transform-react-jsx": "^7.19.0",
     "@babel/plugin-transform-react-jsx-development": "^7.18.6",
-    "@preact/preset-vite": "^2.3.0",
+    "@preact/preset-vite": "^2.4.0",
     "babel-plugin-transform-hook-names": "^1.0.2",
-    "typescript": "^4.6.4",
-    "vite": "^3.1.0"
+    "typescript": "^4.8.3",
+    "vite": "^3.1.3"
   }
 }

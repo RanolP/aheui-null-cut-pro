@@ -1,7 +1,7 @@
 import { globalCss } from '../stitches.config.js';
 
 export const applyReset = globalCss({
-  '*': {
+  '*, *::before, *::after': {
     boxSizing: 'border-box',
   },
   body: {
